@@ -5,12 +5,20 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: Current File",
+            "name": "Server",
             "type": "python",
             "request": "launch",
-            "program": "${file}",
+            "cwd": "${workspaceFolder}",
+            "program": "server.py",
             "console": "integratedTerminal",
-            "justMyCode": true
+            "justMyCode": true,
+            "pythonArgs": [
+                "-Xfrozen_modules=off"
+            ],
+            "env": {
+                "PYDEVD_DISABLE_FILE_VALIDATION": "1",
+                "STORAGE_SECRET": "secret"
+            }
         }
     ]
 }
